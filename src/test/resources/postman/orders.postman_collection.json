@@ -1,0 +1,607 @@
+{
+	"info": {
+		"_postman_id": "5b83f75f-c93d-4430-9b88-bdf6944a2ffe",
+		"name": "orders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4197740"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client_document\": {\r\n        \"type\": \"DU\",\r\n        \"number\": \"41106480\"\r\n    },\r\n    \"products\": [\r\n        {\r\n            \"code\": \"AA000AA\",\r\n            \"quantity\": 10\r\n        },\r\n        {\r\n            \"code\": \"AA123AA\",\r\n            \"quantity\": 99\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client_document\": {\r\n        \"type\": \"DU\",\r\n        \"number\": \"41106480\"\r\n    },\r\n    \"products\": [\r\n        {\r\n            \"code\": \"AA000AA\",\r\n            \"quantity\": 10\r\n        },\r\n        {\r\n            \"code\": \"AA123AA\",\r\n            \"quantity\": 99\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Oct 2024 13:06:40 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"66ffe860e1efcc4dbfbb7242\",\n    \"client\": {\n        \"name\": \"Gian Franco\",\n        \"surname\": \"Stabile\",\n        \"document\": {\n            \"type\": \"DU\",\n            \"number\": \"41106480\"\n        }\n    },\n    \"products\": [\n        {\n            \"code\": \"AA000AA\",\n            \"quantity\": 10,\n            \"unit_price\": 7500,\n            \"total_price\": 75000\n        },\n        {\n            \"code\": \"AA123AA\",\n            \"quantity\": 99,\n            \"unit_price\": 1820,\n            \"total_price\": 180180\n        }\n    ],\n    \"total_price\": 255180,\n    \"state\": {\n        \"state\": \"PENDING\"\n    },\n    \"creation_date\": \"04/10/2024 13:06+0000\"\n}"
+				}
+			]
+		},
+		{
+			"name": "find all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Sep 2024 20:04:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"66f9b08207dfe81f73f621f5\",\n        \"client\": {\n            \"name\": \"Gian\",\n            \"surname\": \"Stabile\",\n            \"document\": {\n                \"type\": \"DU\",\n                \"number\": \"41106480\"\n            }\n        },\n        \"products\": [\n            {\n                \"code\": \"AA000AA\",\n                \"quantity\": 5,\n                \"unit_price\": 7500,\n                \"total_price\": 37500\n            },\n            {\n                \"code\": \"AA123AA\",\n                \"quantity\": 3,\n                \"unit_price\": 1820,\n                \"total_price\": 5460\n            }\n        ],\n        \"total_price\": 42960,\n        \"state\": {\n            \"state\": \"PENDING\"\n        },\n        \"creation_date\": \"29/09/2024 19:54+0000\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "find by code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/orders/66fa0e9a74ff671e82a7466c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"orders",
+						"66fa0e9a74ff671e82a7466c"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok - pending",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/orders/66f9b08207dfe81f73f621f5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders",
+								"66f9b08207dfe81f73f621f5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Sep 2024 20:25:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"66f9b08207dfe81f73f621f5\",\n    \"client\": {\n        \"name\": \"Gian\",\n        \"surname\": \"Stabile\",\n        \"document\": {\n            \"type\": \"DU\",\n            \"number\": \"41106480\"\n        }\n    },\n    \"products\": [\n        {\n            \"code\": \"AA000AA\",\n            \"quantity\": 5,\n            \"unit_price\": 7500,\n            \"total_price\": 37500\n        },\n        {\n            \"code\": \"AA123AA\",\n            \"quantity\": 3,\n            \"unit_price\": 1820,\n            \"total_price\": 5460\n        }\n    ],\n    \"total_price\": 42960,\n    \"state\": {\n        \"state\": \"PENDING\"\n    },\n    \"creation_date\": \"29/09/2024 19:54+0000\"\n}"
+				},
+				{
+					"name": "ok - processed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/orders/66f9b08207dfe81f73f621f5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders",
+								"66f9b08207dfe81f73f621f5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Sep 2024 20:26:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"66f9b08207dfe81f73f621f5\",\n    \"client\": {\n        \"name\": \"Gian\",\n        \"surname\": \"Stabile\",\n        \"document\": {\n            \"type\": \"DU\",\n            \"number\": \"41106480\"\n        }\n    },\n    \"products\": [\n        {\n            \"code\": \"AA000AA\",\n            \"quantity\": 5,\n            \"unit_price\": 7500,\n            \"total_price\": 37500\n        },\n        {\n            \"code\": \"AA123AA\",\n            \"quantity\": 3,\n            \"unit_price\": 1820,\n            \"total_price\": 5460\n        }\n    ],\n    \"total_price\": 42960,\n    \"state\": {\n        \"state\": \"PROCESSED\"\n    },\n    \"creation_date\": \"29/09/2024 19:54+0000\"\n}"
+				},
+				{
+					"name": "ok - cancel",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/orders/66f9b81e8098e2599626c942",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders",
+								"66f9b81e8098e2599626c942"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Sep 2024 20:27:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"66f9b81e8098e2599626c942\",\n    \"client\": {\n        \"name\": \"Gian\",\n        \"surname\": \"Stabile\",\n        \"document\": {\n            \"type\": \"DU\",\n            \"number\": \"41106480\"\n        }\n    },\n    \"products\": [\n        {\n            \"code\": \"AA000AA\",\n            \"quantity\": 1,\n            \"unit_price\": 7500,\n            \"total_price\": 7500\n        },\n        {\n            \"code\": \"AA123AA\",\n            \"quantity\": 1,\n            \"unit_price\": 1820,\n            \"total_price\": 1820\n        }\n    ],\n    \"total_price\": 9320,\n    \"state\": {\n        \"state\": \"CANCELED\"\n    },\n    \"creation_date\": \"29/09/2024 20:27+0000\"\n}"
+				}
+			]
+		},
+		{
+			"name": "print by code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/orders/66ffe77b8374171d1bd32fc7/print",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"orders",
+						"66ffe77b8374171d1bd32fc7",
+						"print"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok - pending",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/orders/66f9b08207dfe81f73f621f5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders",
+								"66f9b08207dfe81f73f621f5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Sep 2024 20:25:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"66f9b08207dfe81f73f621f5\",\n    \"client\": {\n        \"name\": \"Gian\",\n        \"surname\": \"Stabile\",\n        \"document\": {\n            \"type\": \"DU\",\n            \"number\": \"41106480\"\n        }\n    },\n    \"products\": [\n        {\n            \"code\": \"AA000AA\",\n            \"quantity\": 5,\n            \"unit_price\": 7500,\n            \"total_price\": 37500\n        },\n        {\n            \"code\": \"AA123AA\",\n            \"quantity\": 3,\n            \"unit_price\": 1820,\n            \"total_price\": 5460\n        }\n    ],\n    \"total_price\": 42960,\n    \"state\": {\n        \"state\": \"PENDING\"\n    },\n    \"creation_date\": \"29/09/2024 19:54+0000\"\n}"
+				},
+				{
+					"name": "ok - processed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/orders/66f9b08207dfe81f73f621f5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders",
+								"66f9b08207dfe81f73f621f5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Sep 2024 20:26:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"66f9b08207dfe81f73f621f5\",\n    \"client\": {\n        \"name\": \"Gian\",\n        \"surname\": \"Stabile\",\n        \"document\": {\n            \"type\": \"DU\",\n            \"number\": \"41106480\"\n        }\n    },\n    \"products\": [\n        {\n            \"code\": \"AA000AA\",\n            \"quantity\": 5,\n            \"unit_price\": 7500,\n            \"total_price\": 37500\n        },\n        {\n            \"code\": \"AA123AA\",\n            \"quantity\": 3,\n            \"unit_price\": 1820,\n            \"total_price\": 5460\n        }\n    ],\n    \"total_price\": 42960,\n    \"state\": {\n        \"state\": \"PROCESSED\"\n    },\n    \"creation_date\": \"29/09/2024 19:54+0000\"\n}"
+				},
+				{
+					"name": "ok - cancel",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/orders/66f9b81e8098e2599626c942",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders",
+								"66f9b81e8098e2599626c942"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Sep 2024 20:27:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"66f9b81e8098e2599626c942\",\n    \"client\": {\n        \"name\": \"Gian\",\n        \"surname\": \"Stabile\",\n        \"document\": {\n            \"type\": \"DU\",\n            \"number\": \"41106480\"\n        }\n    },\n    \"products\": [\n        {\n            \"code\": \"AA000AA\",\n            \"quantity\": 1,\n            \"unit_price\": 7500,\n            \"total_price\": 7500\n        },\n        {\n            \"code\": \"AA123AA\",\n            \"quantity\": 1,\n            \"unit_price\": 1820,\n            \"total_price\": 1820\n        }\n    ],\n    \"total_price\": 9320,\n    \"state\": {\n        \"state\": \"CANCELED\"\n    },\n    \"creation_date\": \"29/09/2024 20:27+0000\"\n}"
+				}
+			]
+		},
+		{
+			"name": "process",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/orders/66f9b08207dfe81f73f621f5/process",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"orders",
+						"66f9b08207dfe81f73f621f5",
+						"process"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/orders/66f9b08207dfe81f73f621f5/process",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders",
+								"66f9b08207dfe81f73f621f5",
+								"process"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Sep 2024 20:26:07 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "cancel",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/orders/66fa0e9a74ff671e82a7466c/cancel",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"orders",
+						"66fa0e9a74ff671e82a7466c",
+						"cancel"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/orders/66f9b81e8098e2599626c942/cancel",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders",
+								"66f9b81e8098e2599626c942",
+								"cancel"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Sep 2024 20:27:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
